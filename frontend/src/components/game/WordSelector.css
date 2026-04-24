@@ -1,0 +1,94 @@
+.word-selector-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.selector-panel {
+  width: 90%;
+  max-width: 450px;
+  padding: 40px;
+  text-align: center;
+  animation: modalPop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes modalPop {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.selector-title {
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+.selector-hint {
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: 600;
+  margin-bottom: 35px;
+}
+
+.word-button-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.word-select-btn {
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.word-select-btn:hover {
+  background: #00d2ff;
+  color: #000;
+  border-color: #00d2ff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 210, 255, 0.2);
+}
+
+/* Guesser View & Dots */
+.drawer-highlight {
+  color: #00d2ff;
+  font-weight: 800;
+}
+
+.loading-animation {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 25px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background: #00d2ff;
+  border-radius: 50%;
+  animation: dotBlink 1.4s infinite ease-in-out both;
+}
+
+.dot:nth-child(1) { animation-delay: -0.32s; }
+.dot:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes dotBlink {
+  0%, 80%, 100% { transform: scale(0); opacity: 0.3; }
+  40% { transform: scale(1); opacity: 1; }
+}

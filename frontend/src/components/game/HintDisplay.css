@@ -1,0 +1,58 @@
+.hint-display-wrapper {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.char-box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 25px;
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-size: 1.8rem;
+  font-weight: 800;
+  transition: all 0.3s ease;
+}
+
+.char-box.underscore {
+  color: rgba(255, 255, 255, 0.2);
+  border-bottom: 3px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 2px;
+}
+
+.char-box.letter {
+  color: #00d2ff;
+  text-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
+  animation: revealLetter 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+
+@keyframes revealLetter {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+    filter: brightness(3);
+  }
+  50% {
+    transform: scale(1.2);
+    filter: brightness(2);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+    filter: brightness(1);
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .hint-display-wrapper {
+    gap: 5px;
+  }
+  .char-box {
+    min-width: 15px;
+    font-size: 1.2rem;
+  }
+}

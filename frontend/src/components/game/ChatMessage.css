@@ -1,0 +1,48 @@
+.message-item {
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.message-item .player-name {
+  font-weight: 800;
+  color: #00d2ff;
+}
+
+.message-item.chat, .message-item.guess {
+  background: rgba(255, 255, 255, 0.03);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.message-item.correct {
+  background: rgba(46, 213, 115, 0.15);
+  color: #2ed573;
+  font-weight: 700;
+  text-align: center;
+  border: 1px solid rgba(46, 213, 115, 0.3);
+  margin: 4px 0;
+  animation: correctPop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.correct-guess-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.message-item.system {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.4);
+  font-style: italic;
+  font-size: 0.8rem;
+  text-align: center;
+  padding: 4px;
+}
+
+@keyframes correctPop {
+  0% { transform: scale(0.9); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}

@@ -1,0 +1,63 @@
+.countdown-timer {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timer-svg {
+  transform: rotate(-90deg);
+}
+
+.timer-bg {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.05);
+  stroke-width: 4px;
+}
+
+.timer-progress {
+  fill: none;
+  stroke-width: 4px;
+  stroke-linecap: round;
+  stroke-dasharray: 125.6;
+  transition: stroke-dashoffset 1s linear, stroke 0.3s ease;
+}
+
+/* State Colors */
+.countdown-timer.normal .timer-progress {
+  stroke: #2ed573; /* Green */
+}
+
+.countdown-timer.warning .timer-progress {
+  stroke: #ffa502; /* Yellow/Orange */
+}
+
+.countdown-timer.critical .timer-progress {
+  stroke: #ff4757; /* Red */
+  filter: drop-shadow(0 0 5px #ff4757);
+}
+
+.countdown-timer.critical .time-text {
+  animation: pulse-timer 0.5s infinite ease-in-out;
+}
+
+/* Text Styling */
+.time-text {
+  position: absolute;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.countdown-timer.warning .time-text { color: #ffa502; }
+.countdown-timer.critical .time-text { color: #ff4757; }
+
+@keyframes pulse-timer {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}

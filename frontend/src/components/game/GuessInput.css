@@ -1,0 +1,48 @@
+.guess-input-form {
+  display: flex;
+  gap: 10px;
+}
+
+.guess-input-form input {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 12px 15px;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.guess-input-form input:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: #00d2ff;
+}
+
+.guess-input-form input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.guess-input-form button {
+  background: #00d2ff;
+  border: none;
+  color: #000;
+  font-weight: 800;
+  padding: 0 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.guess-input-form button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 210, 255, 0.3);
+}
+
+.guess-input-form button:disabled {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.3);
+  cursor: not-allowed;
+}

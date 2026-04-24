@@ -1,0 +1,102 @@
+.artist-toolbox {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 20px;
+}
+
+.toolbox-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.toolbox-section label {
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 1px;
+}
+
+.color-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.swatch {
+  aspect-ratio: 1;
+  border-radius: 8px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0;
+}
+
+.swatch:hover {
+  transform: scale(1.1);
+}
+
+.swatch.active {
+  border-color: #fff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  transform: scale(1.15);
+}
+
+.size-selector {
+  display: flex;
+  gap: 10px;
+}
+
+.size-btn {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  padding: 8px;
+  border-radius: 8px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.size-btn.active {
+  background: #00d2ff;
+  color: #000;
+  border-color: #00d2ff;
+}
+
+.toolbox-section.actions {
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.tool-icon-btn {
+  width: 45px;
+  height: 45px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tool-icon-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.tool-icon-btn.active {
+  background: #ffa500;
+  border-color: #ffa500;
+  color: #000;
+}
+
+.tool-icon-btn.danger:hover {
+  background: rgba(255, 71, 87, 0.2);
+  border-color: #ff4757;
+}
