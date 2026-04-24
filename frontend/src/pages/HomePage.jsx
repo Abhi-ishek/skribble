@@ -86,9 +86,9 @@ const HomePage = () => {
               <label>Room Code</label>
               <input
                 type="text"
-                placeholder="ABCD"
+                placeholder="Enter passcode"
                 value={roomCode}
-                onChange={(e) => setRoomCode(e.target.value.toUpperCase())}
+                onChange={(e) => setRoomCode(e.target.value)}
                 required
               />
             </div>
