@@ -2,18 +2,19 @@ import express from "express";
 import cors from "cors";
 import { createServer } from "http";
 import { Server } from "socket.io";
-import { PORT, CLIENT_URL } from "./config/env.js";
+// import { CLIENT_URL } from "./config/env.js";
 import { connectDB } from "./db/connect.js";
 import { seedWords } from "./utils/wordSeeder.js";
 import { GameManager } from "./classes/GameManager.js";
 import socketHandler from "./sockets/socketHandler.js";
 import roomRoutes from "./routes/roomRoutes.js";
+import { CLIENT_URL } from "./config/env.js";
 
 // 1. Initialize Express and HTTP Server
 const app = express();
 const httpServer = createServer(app);
 const PORT = process.env.PORT || 5000;
-const CLIENT_URL= process.env.CLIENT_URL;
+// const CLIENT_URL= process.env.CLIENT_URL;
 
 // 2. Setup Socket.IO with CORS
 const io = new Server(httpServer, {
@@ -43,17 +44,20 @@ const startServer = async () => {
 
     // 7. Initialize Game Manager & Sockets
     const gameManager = new GameManager(io);
-    socketHandler(io, gameManager);
+    socketHandler(io, gameManager); 
 
-    // 8. Start Listening
+
     httpServer.listen(PORT, () => {
       console.log(`🚀 Server running on port ${PORT}`);
       console.log(`🔗 Client URL: ${CLIENT_URL}`);
     });
+   
   } catch (error) {
     console.error("Failed to start server:", error);
     process.exit(1);
   }
 };
+
+ // 8. Start Listening
 
 startServer();
