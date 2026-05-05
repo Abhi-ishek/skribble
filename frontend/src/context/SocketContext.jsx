@@ -3,7 +3,7 @@ import { io } from "socket.io-client";
 // import { createContext } from "react";
 const SocketContext = createContext();
 
-const SERVER_URL =  import.meta.env.VITE_SERVER_URL || "http://localhost:5000";
+const SERVER_URL =  https://skribble-ktax.onrender.com";
 export const useSocketContext = () => {
   const context = useContext(SocketContext);
   if (context === undefined) {
@@ -16,7 +16,7 @@ export const SocketProvider = ({ children }) => {
   const [socket, setSocket] = useState(null);
 
   useEffect(() => {
-    const newSocket = io(SERVER_URL, {
+    const newSocket = io(https://skribble-ktax.onrender.com, {
       reconnection: true,
       reconnectionAttempts: 5,
     });
