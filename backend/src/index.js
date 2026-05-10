@@ -28,6 +28,8 @@ const io = new Server(httpServer, {
 app.use(cors({ origin: CLIENT_URL }));
 app.use(express.json());
 
+app.get('/', (req,res) =>{
+  res.send("backend is running")})
 // 4. REST API Routes
 app.use("/api", roomRoutes);
 
